@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e3ab8ea-4804-4df7-aa2d-8a5488593af6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quiz/templates/answer.html" afterPath="$PROJECT_DIR$/quiz/templates/answer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/quiz/templates/quiz.html" afterPath="$PROJECT_DIR$/quiz/templates/quiz.html" />
-    </list>
+    <list default="true" id="9e3ab8ea-4804-4df7-aa2d-8a5488593af6" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="quiz.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="quiz.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/quiz/templates/quiz.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+            <state relative-caret-position="195">
+              <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -114,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="answer.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="answer.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/quiz/templates/answer.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="109">
@@ -527,7 +524,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="1" width="1364" height="726" extended-state="0" />
+    <frame x="1" y="1" width="1364" height="726" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26457056" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -790,6 +787,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/quiz/templates/quiz.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="30" column="41" lean-forward="false" selection-start-line="30" selection-start-column="41" selection-end-line="30" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/quiz/templates/answer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="109">
@@ -797,14 +802,6 @@
           <folding>
             <element signature="e#405#444#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/quiz/templates/quiz.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="38" column="28" lean-forward="false" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
