@@ -17,6 +17,7 @@
 .thumblist-img{
 	height: 120px;
 	background-size: cover;
+	background-position: center;
 }
 
 .thumblist{
@@ -90,4 +91,13 @@ body {
 
 .start:hover, .start:active, .start:visited , .start:focus{
 	background-color: #000;
+}
+
+@media only screen and (max-width: 768px){
+	.small .thumblist-img{
+	height: 80px;
+}
+	.ad2{
+		display: none;
+	}
 }
