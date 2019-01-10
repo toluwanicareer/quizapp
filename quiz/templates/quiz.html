@@ -1,0 +1,38 @@
+{%  extends 'base.html' %}
+{%  block content %}
+<main>
+	<div class="container thumblist-container">
+		<div class="row">
+			<div class="col-xs-12" style="margin-bottom: 40px;">
+				<img src="/static/ad.png" class="img-responsive" style="margin-left: auto;margin-right: auto">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 text-center">
+				<h3 class="title">{{ quiz.title }}</h3>
+				<img src="{{ quiz.thumbnail.url }}" class="img-responsive" style="width:100%;margin-bottom: 20px;">
+				<a class="btn btn-primary start" href="/quiz/{{ quiz.slug }}/questions">Start Now</a>
+
+				<div class="sharethis-inline-share-buttons"></div>
+                <div class="spacer10"></div>
+                 <div class="spacer10"></div>
+                <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-numposts="5"></div>
+			     <div class="spacer10"></div>
+                 <div class="spacer10"></div>
+                 <div class="spacer10"></div>
+            </div>
+			{%  include 'includes/sidebar.html' %}
+		</div>
+
+	</div>
+	</main>
+{%  endblock %}
+{%  block links %}
+    <script type='text/javascript' src="https://platform-api.sharethis.com/js/sharethis.js#property=5c34ea2cede3ff00103ac16f&product='inline-share-buttons'" async='async'></script>
+     <meta property="og:site_name" content="Olayemi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/quiz/{{ quiz.slug }}" />
+    <meta property="og:title" content="{{ quiz.text }}" />
+    <meta property="og:description" content="{{ quiz.subtext }}" />
+    <meta property="og:image" content="{{ answer.thumbnail.url }}" />
+{%  endblock %}

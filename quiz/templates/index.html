@@ -1,0 +1,33 @@
+{%  extends 'base.html' %}
+{% block content %}
+<main>
+	<div class="container thumblist-container">
+		<div class="row">
+			<div class="col-xs-12" style="margin-bottom: 40px;">
+				<img src="/static/ad.png" class="img-responsive" style="margin-left: auto;margin-right: auto">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+                {%  for quiz in quizs %}
+				<div class="row thumblist">
+					<div class="col-sm-4 thumblist-img" style="background-image: url({{ quiz.thumbnail.url }})">
+
+					</div>
+					<div class="col-sm-8">
+                        <a href="/quiz/{{ quiz.slug }}" style="color:#000"><h4>{{ quiz.title }}</h4></a>
+						<p>{{ quiz.subtext }}</p>
+					</div>
+				</div>
+                {%  endfor %}
+			</div>
+			<div class="col-md-4">
+				<div class="row">
+					<img src="/static/ad2.png">
+
+				</div>
+			</div>
+		</div>
+	</div>
+	</main>
+{%  endblock %}

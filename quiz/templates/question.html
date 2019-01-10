@@ -1,0 +1,102 @@
+{%  extends 'base.html' %}
+{%  block content %}
+<main>
+	<div class="container thumblist-container">
+		<div class="row">
+			<div class="col-xs-12" style="margin-bottom: 40px;">
+				<img src="/static/ad.png" class="img-responsive" style="margin-left: auto;margin-right: auto">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 ">
+                <p style="font-size: 30px; margin:0 0 0px"><span id="where">1</span> of {{ no_of_questions }}</p>
+				<hr style="margin-top: 0px">
+				<div class="content text-center">
+                    {%  for question in questions %}
+						<h3>{{ question.text }}</h3>
+                        <div class="spacer10"></div>
+                        <div class="spacer10"></div>
+                        {%  for option in question.option_set.all %}
+                            <a class="options btn btn-primary" data-weight="{{ option.weight }}" question_no="{{ question.no }}">{{ option.text_option }}</a>
+                            <div class="spacer10"></div>
+                         {%  endfor %}
+                    {%  endfor %}
+				</div>
+
+					</div>
+			{%  include 'includes/sidebar.html' %}
+		</div>
+	</div>
+	</main>
+{%  endblock %}
+{%  block scripts %}
+    <script>
+        questions=[
+            {%  for question in questions %}
+            {
+                    'text':'{{ question.text }}',
+                    'no':{{ question.no }},
+                    'options':[
+                        {%  for option in question.option_set.all %}
+                        {
+                            'text':'{{ option.text_option }}',
+                            'weight':'{{ option.weight }}',
+                        },
+                            {% endfor %}
+                    ]
+                    }
+                ,
+            {% endfor %}
+
+        ];
+        sessionStorage.setItem('score',parseInt(0))
+        $('.content').on('click', '.options',function(e){
+            e.preventDefault();
+            score=parseInt(sessionStorage.getItem('score'))+parseInt($(this).attr('data-weight'))
+            sessionStorage.setItem('score', score);
+            question_what=$(this).attr('question_no');
+            next_or_submit(question_what);
+        });
+
+    function next_or_submit(question_no){
+            no_of_questions={{ no_of_questions }}
+            if (question_no == no_of_questions){
+                //meaning last question , therefore submit data and process
+                $.get('/quiz/handle_response', {'quiz_id':{{quiz.id}}, 'score':parseInt(sessionStorage.getItem('score'))} )
+                    .done(function (data) {
+                        //alert(data.answer_id)
+                        window.location='/quiz/'+data.quiz_slug+'/'+data.answer_id
+                    })
+            }else{
+                question=questions[question_no]
+                console.log(question_no)
+                fill_content(question)
+            }
+    }
+
+    function fill_content(question){
+                question_string="<h3>"+question.text+"</h3> <div class'spacer10'></div> <div class='spacer10'></div>";
+                options=question.options;
+                options_string='';
+                options.forEach(function(option){
+                     options_string+="<a class='options btn btn-primary' data-weight='"+option.weight+"' question_no='"+question.no+"' >"+option.text+"</a> <div class='spacer10'></div>"
+                });
+                next_question=question_string+options_string;
+                $('.content').html(next_question);
+                $('#where').text(question.no);
+    }
+
+    question=questions[0]
+    fill_content(question)
+
+    </script>
+{%  endblock %}
+
+{% block links %}
+    <meta property="og:site_name" content="Olayemi" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="/quiz/{{ quiz.slug }}" />
+    <meta property="og:title" content="{{ quiz.text }}" />
+    <meta property="og:description" content="{{ quiz.subtext }}" />
+    <meta property="og:image" content="{{ quiz.subtext }}" />
+{%  endblock %}

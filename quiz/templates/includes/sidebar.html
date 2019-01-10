@@ -1,0 +1,17 @@
+            <div class="col-md-4">
+				<div class="row">
+					<img src="/static/ad2.png">
+
+				</div>
+								<div class="spacer10"></div>
+				{%  for quiz in next_quizs %}
+                    <div class="row thumblist small">
+                        <div class="col-sm-4 thumblist-img" style="background-image: url({{ quiz.thumbnail.url }})">
+
+                        </div>
+                        <div class="col-sm-8">
+                            <h4>{{ quiz.title }}</h4>
+                        </div>
+                    </div>
+                {%  endfor %}
+			</div>
