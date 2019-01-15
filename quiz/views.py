@@ -47,7 +47,7 @@ class HandleResponse(View):
         answers=Answers.objects.filter(quiz_id=quiz_id)
         quiz=Quiz.objects.get(id=quiz_id)
         for answer in answers:
-            if answer.min_score < int(score) and answer.max_score > int(score) :
+            if answer.min_score <= int(score) and answer.max_score >= int(score) :
                 result= answer
         return JsonResponse({'answer_id':result.id, 'quiz_id':quiz_id, 'quiz_slug':quiz.slug})
 
