@@ -76,12 +76,19 @@ body {
 }
 
 .options{
-	width:85%;
+	width:100%;
 	padding: 10px 0;
 	font-size: 1.2em;
 	background-color: #f1f1f1;
 	border-width: 0px;
 	color:#444;
+	white-space: normal !important;
+}
+
+@media only screen and (max-width: 768px){
+	.options{
+		font-size: 12px;
+	}
 }
 
 .options:hover{
