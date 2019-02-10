@@ -25,7 +25,7 @@ SECRET_KEY = 'gjmml*$dh0x8kx+reg(31uqc7cozenod%kab2le(aw0-r*(ylv'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'tolucareer.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', 'tolucareer.pythonanywhere.com', 'quiz.layemiolusoga.com']
 
 
 # Application definition
